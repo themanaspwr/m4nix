@@ -179,7 +179,4 @@ a.card {
 }
 .hero .btn.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 22px rgba(11,18,32,0.08); }
 
-.card img {
-  margin-bottom: 0.5rem;
-  opacity: 0.9;
-}
+
