@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Dashboard | M4N!X">
+  <div class="dashboard-root">
+    <div class="dashboard-card">
+      <h2>Welcome back</h2>
+      <p>Manage your projects, explore tools, and build something new.</p>
+    </div>
+
+    <div class="dashboard-card">
+      <h3>Your Projects</h3>
+      <p>No projects yet — start your first one soon.</p>
+    </div>
+
+    <button
+      class="btn"
+      onclick="window.Clerk?.signOut?.().then(()=>location.href='/')"
+      style="margin-top:1rem"
+    >
+      Sign out
+    </button>
+  </div>
+</Layout>
