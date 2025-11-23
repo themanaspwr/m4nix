@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="M4N!X — I build with AI">
+  <section class="hero">
+    <h1>M4N!X</h1>
+    <p>I build with AI, so you don't have to.</p>
+
+    <div style="margin-top:1.25rem">
+      <a
+        class="btn btn-primary"
+        href="#"
+        onclick="(e=>{e.preventDefault(); window.Clerk.openSignUp({afterSignInUrl:'/dashboard'})})(event)"
+      >
+        Get started
+      </a>
+
+      <a class="btn" href="/pricing" style="margin-left:0.6rem;">
+        Pricing
+      </a>
+    </div>
+
+    <section class="services-grid" style="margin-top:2.5rem">
+      <div class="card">
+        <h3>AI Website Creation</h3>
+        <p>Create a modern website instantly using AI.</p>
+      </div>
+
+      <div class="card">
+        <h3>AI Automation</h3>
+        <p>Automate content, workflows, and tasks.</p>
+      </div>
+
+      <div class="card">
+        <h3>Branding & Design</h3>
+        <p>Logos, colors, layouts — all AI-assisted.</p>
+      </div>
+    </section>
+  </section>
+
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      I'm Manas — a student, creator, and someone who builds quietly.  
+      M4N!X is my personal space where I build with AI so others don't have to.
+    </p>
+  </section>
+</Layout>
