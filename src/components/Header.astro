@@ -1,0 +1,45 @@
+---
+import Logo from './Logo.astro';
+
+const nav = [
+  {text: 'Home', href: '/'},
+  {text: 'Services', href: '/services'},
+  {text: 'Pricing', href: '/pricing'},
+  {text: 'About', href: '/about'},
+  {text: 'Contact', href: '/contact'}
+];
+---
+
+<header class="header">
+  <!-- Left: Logo -->
+  <div style="display:flex;align-items:center;gap:1rem">
+    <a href="/"><Logo /></a>
+
+    <!-- Center: Nav links -->
+    <nav class="nav-links">
+      {nav.map(item => (
+        <a href={item.href}>{item.text}</a>
+      ))}
+    </nav>
+  </div>
+
+  <!-- Right: Auth buttons -->
+  <div>
+    <a
+      href="#"
+      onclick="(e=>{e.preventDefault(); window.Clerk.openSignUp({afterSignInUrl:'/dashboard'})})(event)"
+      class="btn btn-primary"
+    >
+      Sign up
+    </a>
+
+    <a
+      href="#"
+      onclick="(e=>{e.preventDefault(); window.Clerk.openSignIn({afterSignInUrl:'/dashboard'})})(event)"
+      class="btn btn-outline"
+      style="margin-left:0.5rem"
+    >
+      Log in
+    </a>
+  </div>
+</header>
