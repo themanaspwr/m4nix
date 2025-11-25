@@ -2,32 +2,150 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Services | M4N!X">
-  <section class="container">
-    <h1>Services</h1>
+<Layout title="Services — M4N!X">
 
+  <section class="container" style="padding-top:3rem; padding-bottom:3rem;">
+    <h1 style="font-size:2.5rem; margin-bottom:1rem;">Services</h1>
+    <p style="color:var(--muted); max-width:560px; line-height:1.6;">
+      Whether you're an individual, creator, or business, I use AI to build fast, modern solutions without wasting your time.
+    </p>
+
+    <!-- Services grid -->
     <div class="services-grid">
-
-      <a id="website" href="#" class="card" style="text-decoration:none;color:inherit;">
+      
+      <!-- Website Creation -->
+      <a href="#website" class="service-card">
         <h3>AI Website Creation</h3>
-        <p>Single or multi-page websites generated quickly using AI.</p>
+        <p>Create single or multi-page websites instantly using AI.</p>
       </a>
 
-      <a id="automation" href="#" class="card" style="text-decoration:none;color:inherit;">
+      <!-- Automation -->
+      <a href="#automation" class="service-card">
         <h3>AI Automation</h3>
-        <p>Automate content, workflows, posts, tasks, reports, and more.</p>
+        <p>Automate workflows, content, posting, tasks, and more.</p>
       </a>
 
-      <a id="branding" href="#" class="card" style="text-decoration:none;color:inherit;">
+      <!-- Branding -->
+      <a href="#branding" class="service-card">
         <h3>Branding & Design</h3>
-        <p>Logos, palettes, clean layouts, and identity design created with AI.</p>
+        <p>Logos, palettes, banners, layouts, and identity design created through AI tools.</p>
       </a>
 
-      <a href="#" class="card" style="text-decoration:none;color:inherit;">
+      <!-- Content -->
+      <a href="#content" class="service-card">
         <h3>Content Creation</h3>
-        <p>Blogs, captions, rewriting, scripts, and content through AI flows.</p>
+        <p>Blogs, captions, rewriting, scripts, and content generation powered by AI workflows.</p>
       </a>
 
     </div>
   </section>
+
+  <!-- Detailed Sections -->
+  <section class="container" style="padding-bottom:3rem;">
+    
+    <!-- Website -->
+    <div id="website" class="service-section">
+      <h2>AI Website Creation</h2>
+      <p>
+        I generate modern, fast websites using AI — landing pages, portfolios, small business sites, and more.
+        You tell me what you want, and I bring it to life instantly.
+      </p>
+      <button class="cta-btn" onclick="window.Clerk.openSignUp()">Start Building</button>
+    </div>
+
+    <!-- Automation -->
+    <div id="automation" class="service-section">
+      <h2>AI Automation</h2>
+      <p>
+        Save hours every week with automated scripts, workflows, schedulers, and smart task systems.
+        From posting to rewriting, everything can be automated.
+      </p>
+      <button class="cta-btn" onclick="window.Clerk.openSignUp()">Start Automating</button>
+    </div>
+
+    <!-- Branding -->
+    <div id="branding" class="service-section">
+      <h2>Branding & Design</h2>
+      <p>
+        Get instant branding kits: logos, color palettes, typography combos, and layout presets designed with AI.
+        Clean, modern, aesthetic.
+      </p>
+      <button class="cta-btn" onclick="window.Clerk.openSignUp()">Get Branding</button>
+    </div>
+
+    <!-- Content -->
+    <div id="content" class="service-section">
+      <h2>Content Creation</h2>
+      <p>
+        Whether you need blogs, captions, or scripts — I generate high-quality content that fits your tone and style.
+      </p>
+      <button class="cta-btn" onclick="window.Clerk.openSignUp()">Get Content</button>
+    </div>
+
+  </section>
+
+  <style>
+    .services-grid {
+      margin-top:2rem;
+      display:grid;
+      gap:1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .service-card {
+      background: var(--card);
+      border:1px solid rgba(0,0,0,0.06);
+      padding:1.5rem;
+      border-radius:16px;
+      text-decoration:none;
+      color:inherit;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 32px rgba(11,18,32,0.12);
+    }
+
+    .service-card h3 {
+      margin:0 0 0.5rem 0;
+      font-family:'Comfortaa',sans-serif;
+      font-size:1.4rem;
+    }
+
+    .service-section {
+      margin-top:3.5rem;
+      padding-bottom:2rem;
+      border-bottom:1px solid rgba(0,0,0,0.08);
+    }
+
+    .service-section h2 {
+      font-size:2rem;
+      margin-bottom:0.5rem;
+      font-family:'Comfortaa',sans-serif;
+    }
+
+    .service-section p {
+      max-width:700px;
+      color:var(--muted);
+      margin-bottom:1.2rem;
+      line-height:1.6;
+    }
+
+    .cta-btn {
+      padding:0.65rem 1.2rem;
+      background:var(--text);
+      color:#fff;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      transition: all .2s;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow:0 10px 22px rgba(11,18,32,0.12);
+    }
+  </style>
+
 </Layout>
