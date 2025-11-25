@@ -1,12 +1,46 @@
-// Auto-scroll Testimonials
+// =========================
+// TESTIMONIALS CAROUSEL
+// =========================
+
 const track = document.querySelector('.carousel-track');
 let position = 0;
+let speed = 0.6; // smooth speed
+let isPaused = false;
 
-setInterval(() => {
-  position -= 1;
-  if (Math.abs(position) >= track.scrollWidth / 2) position = 0;
-  track.style.transform = `translateX(${position}px)`;
-}, 20);
+// Auto scroll
+function animateCarousel() {
+  if (!isPaused) {
+    position -= speed;
+    if (Math.abs(position) >= track.scrollWidth / 2) {
+      position = 0; // reset for infinite loop
+    }
+    track.style.transform = `translateX(${position}px)`;
+  }
+  requestAnimationFrame(animateCarousel);
+}
+requestAnimationFrame(animateCarousel);
+
+// Pause on hover
+track.addEventListener("mouseover", () => isPaused = true);
+track.addEventListener("mouseleave", () => isPaused = false);
+
+// Touch-drag support
+let startX = 0;
+
+track.addEventListener("touchstart", (e) => {
+  isPaused = true;
+  startX = e.touches[0].clientX;
+});
+
+track.addEventListener("touchmove", (e) => {
+  const delta = e.touches[0].clientX - startX;
+  position += delta;  
+  startX = e.touches[0].clientX;
+});
+
+track.addEventListener("touchend", () => {
+  isPaused = false;
+});
 
 // Modal Logic
 const modal = document.getElementById("modal-overlay");
