@@ -187,4 +187,12 @@ a.card {
   transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms;
 }
 .hero .btn.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 22px rgba(11,18,32,0.08); }
+/* Ensure no section creates its own background */
+body, html {
+  background-color: transparent !important;
+}
+
+body > * {
+  background: transparent !important;
+}
 
