@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="M4N!X — I build with AI">
+
+  <!-- HERO -->
   <section class="hero">
     <h1>M4N!X</h1>
     <p>I build with AI, so you don't have to.</p>
@@ -15,31 +17,7 @@ import Layout from '../layouts/Layout.astro';
       >
         Get started
       </a>
-
-      <a class="btn" href="/pricing" style="margin-left:0.6rem;">
-        Pricing
-      </a>
     </div>
-
-    <!-- CLEAN SERVICE CARDS -->
-    <section class="services-grid" style="margin-top:2.5rem">
-
-      <a href="/services#website" class="card" style="text-decoration:none;color:inherit;">
-        <h3>AI Website Creation</h3>
-        <p>Create a modern website instantly using AI.</p>
-      </a>
-
-      <a href="/services#automation" class="card" style="text-decoration:none;color:inherit;">
-        <h3>AI Automation</h3>
-        <p>Automate workflows, content, posts, tasks, and more.</p>
-      </a>
-
-      <a href="/services#branding" class="card" style="text-decoration:none;color:inherit;">
-        <h3>Branding & Design</h3>
-        <p>Logos, palettes, banners, and clean design layouts.</p>
-      </a>
-
-    </section>
   </section>
 
 
@@ -50,17 +28,17 @@ import Layout from '../layouts/Layout.astro';
     <h2 style="font-size:2rem; margin-bottom:1.5rem;">Why M4N!X?</h2>
 
     <div class="why-grid">
-      <div class="why-card premium-card">
+      <div class="why-card">
         <h3>Fast Turnaround</h3>
         <p>Get websites, branding, and automations delivered quickly with AI.</p>
       </div>
 
-      <div class="why-card premium-card">
+      <div class="why-card">
         <h3>Affordable Pricing</h3>
         <p>Pay only for what you need — no messy subscriptions.</p>
       </div>
 
-      <div class="why-card premium-card">
+      <div class="why-card">
         <h3>No Technical Hassle</h3>
         <p>You explain what you want — I handle everything else.</p>
       </div>
@@ -97,43 +75,53 @@ import Layout from '../layouts/Layout.astro';
 
 
   <!-- =============================== -->
-  <!-- 3) TESTIMONIALS CAROUSEL -->
+  <!-- 3) TESTIMONIALS -->
   <!-- =============================== -->
   <section class="container" style="margin-top:4rem;">
     <h2 style="font-size:2rem; margin-bottom:1.5rem;">Testimonials</h2>
 
-    <div class="testimonial-carousel">
-      <div class="carousel-track">
-        <div class="carousel-item">“Super fast and clean work. Website delivered exactly how I imagined.” — Client A</div>
-        <div class="carousel-item">“I saved hours every week thanks to the automation workflows.” — Client B</div>
-        <div class="carousel-item">“Branding kit was perfect. Minimal, modern, aesthetic.” — Client C</div>
-        <div class="carousel-item">“The AI website exceeded expectations. Highly recommended!” — Client D</div>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <p>“Super fast and clean work. Website delivered exactly how I imagined.”</p>
+        <span>— Client A</span>
       </div>
+
+      <div class="testimonial-card">
+        <p>“I saved hours every week thanks to the automation workflows.”</p>
+        <span>— Client B</span>
+      </div>
+
+      <div class="testimonial-card">
+        <p>“Branding kit was perfect. Minimal, modern, aesthetic.”</p>
+        <span>— Client C</span>
+      </div>
+
     </div>
   </section>
 
 
   <!-- =============================== -->
-  <!-- 4) FEATURED WORK (with modal) -->
+  <!-- 4) FEATURED WORK -->
   <!-- =============================== -->
   <section class="container" style="margin-top:4rem; margin-bottom:4rem;">
     <h2 style="font-size:2rem; margin-bottom:1.5rem;">Featured Work</h2>
 
     <div class="featured-grid">
 
-      <div class="featured-card modal-trigger" data-modal="1">
+      <div class="featured-card modal-trigger">
         <div class="placeholder-img"></div>
         <h3>Portfolio Website</h3>
         <p>Clean personal website generated with AI.</p>
       </div>
 
-      <div class="featured-card modal-trigger" data-modal="2">
+      <div class="featured-card modal-trigger">
         <div class="placeholder-img"></div>
         <h3>Business Landing Page</h3>
         <p>Modern landing page for a small business.</p>
       </div>
 
-      <div class="featured-card modal-trigger" data-modal="3">
+      <div class="featured-card modal-trigger">
         <div class="placeholder-img"></div>
         <h3>Branding Kit</h3>
         <p>Logo + color palette + typography set.</p>
@@ -144,48 +132,19 @@ import Layout from '../layouts/Layout.astro';
 
 
   <!-- =============================== -->
-  <!-- FEATURED WORK MODAL -->
+  <!-- MODAL (auto-filled by JS) -->
   <!-- =============================== -->
   <div id="modal-overlay" class="modal-overlay">
-    <div class="modal-content">
-      <span id="modal-close" class="modal-close">✕</span>
+    <div class="modal-box">
+      <button id="modal-close" class="modal-close">×</button>
+      <div class="modal-preview"></div>
 
-      <div class="modal-frame">
-        <div class="modal-browser-bar"></div>
-        <div class="modal-preview"></div>
-      </div>
+      <h3>Preview</h3>
+      <p>This is a placeholder preview for your featured work.</p>
     </div>
   </div>
 
-
-  <!-- =============================== -->
-  <!-- JS for Carousel + Modal -->
-  <!-- =============================== -->
-  <script>
-    /* Auto-scrolling testimonial carousel */
-    const track = document.querySelector('.carousel-track');
-    let position = 0;
-
-    setInterval(() => {
-      position -= 1;
-      if (Math.abs(position) >= track.scrollWidth / 2) position = 0;
-      track.style.transform = \`translateX(\${position}px)\`;
-    }, 20);
-
-    /* Featured Work modal */
-    const modal = document.getElementById("modal-overlay");
-    const modalClose = document.getElementById("modal-close");
-    const modalPreview = document.querySelector(".modal-preview");
-
-    document.querySelectorAll(".modal-trigger").forEach(card => {
-      card.addEventListener("click", () => {
-        modal.classList.add("show");
-        modalPreview.style.background = "linear-gradient(135deg, #dce6ff, #b8c8f3)";
-      });
-    });
-
-    modalClose.onclick = () => modal.classList.remove("show");
-    modal.onclick = (e) => { if (e.target === modal) modal.classList.remove("show"); };
-  </script>
-
 </Layout>
+
+<!-- Load external JS (fixes the backtick crash) -->
+<script src="/src/scripts/homepage.js" defer></script>
