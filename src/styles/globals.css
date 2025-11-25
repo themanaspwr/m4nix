@@ -600,3 +600,25 @@ body, html {
 .testimonial-card:hover {
   transform: translateY(-6px);
 }
+
+/* ========================================= */
+/* FIX: Prevent testimonial cards from lifting */
+/* ========================================= */
+
+.testimonial-card {
+  transition: transform 0ms !important;
+}
+
+.testimonial-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: rgba(0,0,0,0.06) !important;
+}
+
+/* Ensure long text never spills */
+.testimonial-card p {
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
