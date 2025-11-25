@@ -647,75 +647,85 @@ body, html {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+/* ================================
+   FEATURED WORK — MODAL PREVIEW UI
+================================ */
 
-/* ============================== */
-/* Featured Work Improvements     */
-/* ============================== */
-
-.featured-card {
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  transition: transform 220ms cubic-bezier(.2,.9,.2,1),
-              box-shadow 220ms cubic-bezier(.2,.9,.2,1);
-}
-
-.featured-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(11,18,32,0.10);
-}
-
-/* Image zoom-on-hover */
-.featured-card .placeholder-img {
-  transition: transform 400ms ease;
-}
-
-.featured-card:hover .placeholder-img {
-  transform: scale(1.08);
-}
-
-/* Slide-in arrow */
-.featured-card::after {
-  content: "→";
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-  font-size: 1.3rem;
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
-  transform: translateX(-8px);
-  transition: opacity .25s ease, transform .25s ease;
-  color: var(--text);
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 999;
 }
 
-.featured-card:hover::after {
+.modal-overlay.show {
   opacity: 1;
-  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.modal-box {
+  background: white;
+  width: 90%;
+  max-width: 520px;
+  padding: 2rem;
+  border-radius: 18px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.16);
+  animation: modalPop 0.25s ease;
+}
+
+@keyframes modalPop {
+  from { transform: translateY(12px) scale(.97); opacity: 0; }
+  to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.65;
+}
+.modal-close:hover {
+  opacity: 1;
+}
+
+/* FAKE PREVIEW SKELETON */
+.modal-preview {
+  background: #f5f7fa;
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-bottom: 1.3rem;
 }
 
 .fake-preview {
-  width: 100%;
-  height: 180px;
-  background: #f0f3ff;
-  border-radius: 12px;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
 .preview-bar {
-  width: 60%;
-  height: 12px;
-  background: #c7d2f3;
-  border-radius: 4px;
-  margin-bottom: 12px;
+  height: 28px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #d9e2ff, #d0d8f5);
 }
 
 .preview-line {
-  width: 90%;
-  height: 10px;
-  background: #d8e1f7;
+  height: 14px;
   border-radius: 4px;
-  margin-bottom: 8px;
+  background: #e4e9f2;
 }
 
 .preview-line.short {
-  width: 50%;
+  width: 60%;
 }
