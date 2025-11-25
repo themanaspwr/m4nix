@@ -200,3 +200,10 @@ body, html {
 .page-wrapper main {
   flex: 1;
 }
+
+/* Keep container narrow but remove height effect */
+.container {
+  max-width:1100px;
+  margin:0 auto;
+  padding:2rem;
+}
