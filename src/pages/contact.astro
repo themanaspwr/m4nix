@@ -2,16 +2,90 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Contact | M4N!X">
-  <section class="container">
-    <h1>Contact</h1>
+<Layout title="Contact — M4N!X">
+  <section class="container" style="padding-top:3rem; padding-bottom:3rem;">
 
-    <p>
-      For orders or project inquiries, email:
-      <br /><br />
-      <a href="mailto:welcometeamx@gmail.com">
-        welcometeamx@gmail.com
-      </a>
+    <h1 style="font-size:2.5rem; margin-bottom:1rem;">Contact</h1>
+    <p style="color:var(--muted); max-width:560px; line-height:1.6;">
+      Have a question? Want to start a project?  
+      Just send me a message — I respond quickly.
     </p>
+
+    <form
+      action="https://formspree.io/f/mqaodozk"
+      method="POST"
+      class="contact-form"
+      style="margin-top:2rem;"
+    >
+      <label>
+        <span>Name</span>
+        <input type="text" name="name" required />
+      </label>
+
+      <label>
+        <span>Email</span>
+        <input type="email" name="email" required />
+      </label>
+
+      <label>
+        <span>Message</span>
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+
+      <button type="submit" class="contact-btn">Send Message</button>
+    </form>
   </section>
+
+  <style>
+    .contact-form {
+      max-width: 600px;
+    }
+
+    .contact-form label {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      margin-top: 0.4rem;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.1);
+      font-size: 1rem;
+      background: var(--card);
+      resize: none;
+      font-family: inherit;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(14,165,164,0.15);
+      outline: none;
+    }
+
+    .contact-btn {
+      padding: 0.75rem 1.2rem;
+      background: var(--text);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all .2s ease;
+      width: 100%;
+      max-width: 180px;
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(11,18,32,0.12);
+    }
+  </style>
+
 </Layout>
