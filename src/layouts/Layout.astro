@@ -29,11 +29,13 @@ const { title = 'M4N!X' } = Astro.props;
 
   <body>
     <div class="page-wrapper">
-      <Header />
-      <main>
-        <slot />
-      </main>
-      <Footer />
+      <div class="container">
+        <Header />
+        <main>
+          <slot />
+        </main>
+        <Footer />
+      </div>
     </div>
   </body>
 </html>
