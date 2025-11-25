@@ -64,6 +64,7 @@ img{ max-width:100%; display:block; }
 /* Hero */
 .hero{
   padding:4rem 0;
+  position: relative;
 }
 .hero h1{
   font-family:'Comfortaa Variable', sans-serif;
@@ -773,3 +774,42 @@ body, html {
     width: 100%;
   }
 }
+
+/* ========================================= */
+/* FLOATING SHAPES (Hero Right Side)         */
+/* ========================================= */
+
+.floating-shapes {
+  position: absolute;
+  right: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 380px;
+  height: 380px;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+.shape {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  border-radius: 14px;
+  background: rgba(120, 140, 255, 0.25);
+  backdrop-filter: blur(10px);
+  animation: floatAnim 6s infinite ease-in-out alternate;
+}
+
+/* specific shapes */
+.s1 { top: 20px; left: 40px; animation-duration: 7s; transform: rotate(12deg); }
+.s2 { top: 140px; left: 10px; animation-duration: 6s; border-radius: 50%; background: rgba(100,150,255,0.3); }
+.s3 { top: 80px; left: 200px; animation-duration: 8s; background: rgba(160,180,255,0.3); }
+.s4 { top: 200px; left: 150px; animation-duration: 5.5s; border-radius: 50%; }
+.s5 { top: 260px; left: 260px; animation-duration: 7.5s; transform: rotate(30deg); }
+
+/* floating animation */
+@keyframes floatAnim {
+  0% { transform: translateY(0) scale(1) rotate(0deg); }
+  100% { transform: translateY(-20px) scale(1.05) rotate(8deg); }
+}
+
