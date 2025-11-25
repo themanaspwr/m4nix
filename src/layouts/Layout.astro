@@ -19,7 +19,7 @@ const { title = 'M4N!X' } = Astro.props;
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <!-- Clerk (auth) -->
+    <!-- Clerk -->
     <script>
       window.Clerk ||= {};
       window.Clerk.publishableKey = "pk_REPLACE_WITH_YOUR_CLERK_KEY";
@@ -29,13 +29,17 @@ const { title = 'M4N!X' } = Astro.props;
 
   <body>
     <div class="page-wrapper">
-      <div class="container">
-        <Header />
-        <main>
+      
+      <Header />
+
+      <main style="flex:1;">
+        <div class="container">
           <slot />
-        </main>
-        <Footer />
-      </div>
+        </div>
+      </main>
+
+      <Footer />
+
     </div>
   </body>
 </html>
