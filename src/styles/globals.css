@@ -179,4 +179,55 @@ a.card {
 }
 .hero .btn.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 22px rgba(11,18,32,0.08); }
 
+/* ------------------------------- */
+/* Premium Hero Background Effects */
+/* ------------------------------- */
+
+.hero {
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+/* Soft gradient glow behind hero */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  opacity: 0.55;
+  background: radial-gradient(
+    circle at 40% 20%,
+    rgba(14,165,233,0.22),
+    rgba(255,255,255,0)
+  );
+  filter: blur(80px);
+}
+
+/* Abstract blob shape */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -60px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255,0,122,0.18),
+    rgba(255,255,255,0)
+  );
+  z-index: -3;
+  filter: blur(85px);
+}
+
+/* Soft fade-in animation */
+.hero, .hero * {
+  animation: fadeUp 0.7s ease-out both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
