@@ -14,8 +14,8 @@ html,body{
   background: linear-gradient(
     180deg,
     rgba(14,165,164,0.18) 0%,
-    rgba(255,255,255,1) 25%
-    #ffffff 25%
+    rgba(255,255,255,1) 55%
+    #ffffff 55%
   );
 
   color:var(--text);
