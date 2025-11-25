@@ -13,10 +13,10 @@ html,body{
   font-family:'InterVariable', system-ui, sans-serif;
   background: linear-gradient(
     180deg,
-    rgba(14,165,164,0.05) 0%,
-    #ffffff 35%,
-    #ffffff 100%
+    rgba(14,165,164,0.18) 0%,
+    rgba(255,255,255,1) 55%
   );
+
   color:var(--text);
 }
 
