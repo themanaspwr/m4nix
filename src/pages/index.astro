@@ -10,49 +10,32 @@ import Layout from '../layouts/Layout.astro';
     <p>I build with AI, so you don't have to.</p>
 
     <div style="margin-top:1.25rem">
-      <a class="btn btn-primary" href="#" data-open-signup>
+      <a
+        class="btn btn-primary"
+        href="#"
+        onclick="(e=>{e.preventDefault(); window.Clerk.openSignUp({afterSignInUrl:'/dashboard'})})(event)"
+      >
         Get started
       </a>
-
-      <a class="btn" href="/pricing" style="margin-left:0.6rem;">
-        Pricing
-      </a>
     </div>
-
-    <!-- SERVICE CARDS -->
-    <section class="services-grid" style="margin-top:2.5rem">
-      <a href="/services#website" class="card">
-        <h3>AI Website Creation</h3>
-        <p>Create a modern website instantly using AI.</p>
-      </a>
-
-      <a href="/services#automation" class="card">
-        <h3>AI Automation</h3>
-        <p>Automate workflows, content, posts, tasks, and more.</p>
-      </a>
-
-      <a href="/services#branding" class="card">
-        <h3>Branding & Design</h3>
-        <p>Logos, palettes, banners, and clean design layouts.</p>
-      </a>
-    </section>
   </section>
 
 
-
-  <!-- WHY M4N!X -->
+  <!-- =============================== -->
+  <!-- 1) WHY M4N!X -->
+  <!-- =============================== -->
   <section class="container" style="margin-top:4rem;">
     <h2 style="font-size:2rem; margin-bottom:1.5rem;">Why M4N!X?</h2>
 
     <div class="why-grid">
       <div class="why-card">
         <h3>Fast Turnaround</h3>
-        <p>Websites, branding & automation delivered quickly with AI.</p>
+        <p>Get websites, branding, and automations delivered quickly with AI.</p>
       </div>
 
       <div class="why-card">
         <h3>Affordable Pricing</h3>
-        <p>Pay only for what you need — no subscriptions.</p>
+        <p>Pay only for what you need — no messy subscriptions.</p>
       </div>
 
       <div class="why-card">
@@ -63,8 +46,9 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
 
-
-  <!-- HOW IT WORKS -->
+  <!-- =============================== -->
+  <!-- 2) HOW IT WORKS -->
+  <!-- =============================== -->
   <section class="container" style="margin-top:4rem;">
     <h2 style="font-size:2rem; margin-bottom:1.5rem;">How It Works</h2>
 
@@ -78,7 +62,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="step-card">
         <span class="step-number">2</span>
         <h3>I Build With AI</h3>
-        <p>I generate and customize everything using AI tools.</p>
+        <p>I generate everything using AI tools, then customize it for you.</p>
       </div>
 
       <div class="step-card">
@@ -90,12 +74,14 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
 
-
-  <!-- TESTIMONIALS -->
+  <!-- =============================== -->
+  <!-- 3) TESTIMONIALS -->
+  <!-- =============================== -->
   <section class="container" style="margin-top:4rem;">
     <h2 style="font-size:2rem; margin-bottom:1.5rem;">Testimonials</h2>
 
     <div class="testimonials-grid">
+
       <div class="testimonial-card">
         <p>“Super fast and clean work. Website delivered exactly how I imagined.”</p>
         <span>— Client A</span>
@@ -110,38 +96,55 @@ import Layout from '../layouts/Layout.astro';
         <p>“Branding kit was perfect. Minimal, modern, aesthetic.”</p>
         <span>— Client C</span>
       </div>
+
     </div>
   </section>
 
 
-
-  <!-- FEATURED WORK -->
+  <!-- =============================== -->
+  <!-- 4) FEATURED WORK -->
+  <!-- =============================== -->
   <section class="container" style="margin-top:4rem; margin-bottom:4rem;">
     <h2 style="font-size:2rem; margin-bottom:1.5rem;">Featured Work</h2>
 
     <div class="featured-grid">
-      <div class="featured-card">
+
+      <div class="featured-card modal-trigger">
         <div class="placeholder-img"></div>
         <h3>Portfolio Website</h3>
         <p>Clean personal website generated with AI.</p>
       </div>
 
-      <div class="featured-card">
+      <div class="featured-card modal-trigger">
         <div class="placeholder-img"></div>
         <h3>Business Landing Page</h3>
         <p>Modern landing page for a small business.</p>
       </div>
 
-      <div class="featured-card">
+      <div class="featured-card modal-trigger">
         <div class="placeholder-img"></div>
         <h3>Branding Kit</h3>
         <p>Logo + color palette + typography set.</p>
       </div>
+
     </div>
   </section>
 
 
-  <!-- Homepage interactions -->
-  <script src="/scripts/homepage.js" defer></script>
+  <!-- =============================== -->
+  <!-- MODAL (auto-filled by JS) -->
+  <!-- =============================== -->
+  <div id="modal-overlay" class="modal-overlay">
+    <div class="modal-box">
+      <button id="modal-close" class="modal-close">×</button>
+      <div class="modal-preview"></div>
+
+      <h3>Preview</h3>
+      <p>This is a placeholder preview for your featured work.</p>
+    </div>
+  </div>
 
 </Layout>
+
+<!-- Load external JS (fixes the backtick crash) -->
+<script src="/src/scripts/homepage.js" defer></script>
