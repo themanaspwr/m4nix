@@ -560,3 +560,43 @@ body, html {
     transform: scale(1.08);
   }
 }
+
+/* ===================================================== */
+/* TESTIMONIAL CAROUSEL                                 */
+/* ===================================================== */
+
+.testimonial-carousel {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.testimonial-card {
+  background: var(--card);
+  padding: 1.4rem;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.06);
+  min-width: 260px;
+  max-width: 260px;
+  font-style: italic;
+  transition: transform 0.25s ease;
+}
+
+.testimonial-card span {
+  display: block;
+  margin-top: 0.8rem;
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* Hover pause + lift */
+.testimonial-card:hover {
+  transform: translateY(-6px);
+}
