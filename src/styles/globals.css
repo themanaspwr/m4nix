@@ -813,3 +813,16 @@ body, html {
   100% { transform: translateY(-20px) scale(1.05) rotate(8deg); }
 }
 
+.ai-particles {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 340px;
+  pointer-events: none;
+  opacity: 0.8;
+}
+.hero {
+  position: relative;
+  overflow: visible;
+}
