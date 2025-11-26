@@ -830,7 +830,4 @@ body, html {
   pointer-events: none;
 }
 
-body {
-  position: relative;
-  background: transparent !important; /* DO NOT remove your gradient */
-}
+
