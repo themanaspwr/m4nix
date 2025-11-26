@@ -27,25 +27,26 @@ const { title = 'M4N!X' } = Astro.props;
     <script src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.min.js"></script>
   </head>
 
- <body>
+  <body>
     <div class="page-wrapper">
-  
+
       <header>
         <div class="container">
           <Header />
         </div>
       </header>
-  
+
+      <!-- IMPORTANT: slot is NOT wrapped in .container -->
       <main style="flex:1;">
         <slot />
       </main>
-  
+
       <footer>
         <div class="container">
           <Footer />
         </div>
       </footer>
-  
+
     </div>
   </body>
 
