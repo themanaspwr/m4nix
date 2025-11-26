@@ -4,10 +4,8 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="M4N!X — I build with AI">
 
-  <!-- FULL PAGE PARTICLES (moved INSIDE layout container) -->
-  <section>
-    <canvas id="particles-canvas"></canvas>
-  </section>
+  <!-- FULL PAGE PARTICLES (must be at top and outside container) -->
+  <canvas id="particles-canvas"></canvas>
 
   <!-- HERO -->
   <section class="hero">
@@ -25,7 +23,6 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- EVERYTHING BELOW REMAINS 100% EXACTLY THE SAME -->
   <!-- WHY M4N!X -->
   <section class="container" style="margin-top:4rem;">
     <h2 style="font-size:2rem; margin-bottom:1.5rem;">Why M4N!X?</h2>
@@ -76,41 +73,17 @@ import Layout from '../layouts/Layout.astro';
   <!-- TESTIMONIALS -->
   <section class="container" style="margin-top:4rem;">
     <h2 style="font-size:2rem; margin-bottom:1.5rem;">Testimonials</h2>
-
+  
     <div class="testimonial-carousel">
       <div class="carousel-track">
+        <div class="testimonial-card"><p>“Super fast and clean work. Website delivered exactly how I imagined.”</p><span>— Client A</span></div>
+        <div class="testimonial-card"><p>“I saved hours every week thanks to the automation workflows.”</p><span>— Client B</span></div>
+        <div class="testimonial-card"><p>“Branding kit was perfect. Minimal, modern, aesthetic.”</p><span>— Client C</span></div>
 
-        <div class="testimonial-card">
-          <p>“Super fast and clean work. Website delivered exactly how I imagined.”</p>
-          <span>— Client A</span>
-        </div>
-
-        <div class="testimonial-card">
-          <p>“I saved hours every week thanks to the automation workflows.”</p>
-          <span>— Client B</span>
-        </div>
-
-        <div class="testimonial-card">
-          <p>“Branding kit was perfect. Minimal, modern, aesthetic.”</p>
-          <span>— Client C</span>
-        </div>
-
-        <!-- Duplicate -->
-        <div class="testimonial-card">
-          <p>“Super fast and clean work. Website delivered exactly how I imagined.”</p>
-          <span>— Client A</span>
-        </div>
-
-        <div class="testimonial-card">
-          <p>“I saved hours every week thanks to the automation workflows.”</p>
-          <span>— Client B</span>
-        </div>
-
-        <div class="testimonial-card">
-          <p>“Branding kit was perfect. Minimal, modern, aesthetic.”</p>
-          <span>— Client C</span>
-        </div>
-
+        <!-- Duplicate for infinite scroll -->
+        <div class="testimonial-card"><p>“Super fast and clean work. Website delivered exactly how I imagined.”</p><span>— Client A</span></div>
+        <div class="testimonial-card"><p>“I saved hours every week thanks to the automation workflows.”</p><span>— Client B</span></div>
+        <div class="testimonial-card"><p>“Branding kit was perfect. Minimal, modern, aesthetic.”</p><span>— Client C</span></div>
       </div>
     </div>
   </section>
@@ -151,6 +124,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </div>
 
+  <!-- Scripts -->
   <script src="/scripts/homepage.js" defer></script>
   <script src="/scripts/particles.js" defer></script>
 
