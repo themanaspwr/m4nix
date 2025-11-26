@@ -826,3 +826,14 @@ body, html {
   position: relative;
   overflow: visible;
 }
+/* ================================
+   FULL PAGE PARTICLES CANVAS
+================================ */
+#particles-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
