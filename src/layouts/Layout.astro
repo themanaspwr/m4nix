@@ -17,7 +17,10 @@ const { title = 'M4N!X' } = Astro.props;
     <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Clerk -->
     <script>
@@ -28,16 +31,18 @@ const { title = 'M4N!X' } = Astro.props;
   </head>
 
   <body>
-    <div class="page-wrapper">
+    <!-- ONE global background canvas -->
+    <canvas id="particles-canvas"></canvas>
 
+    <div class="page-wrapper">
       <header>
         <div class="container">
           <Header />
         </div>
       </header>
 
-      <!-- IMPORTANT: slot is NOT wrapped in .container -->
       <main style="flex:1;">
+        <!-- put slot back in container so hero is centered -->
         <div class="container">
           <slot />
         </div>
@@ -48,8 +53,9 @@ const { title = 'M4N!X' } = Astro.props;
           <Footer />
         </div>
       </footer>
-
     </div>
-  </body>
 
+    <!-- scripts shared on all pages -->
+    <script src="/scripts/particles.js" defer></script>
+  </body>
 </html>
