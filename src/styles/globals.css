@@ -818,6 +818,14 @@ body, html {
   position: relative;
   overflow: visible;
 }
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
 /* ================================
    FULL PAGE PARTICLES CANVAS
 ================================ */
@@ -826,7 +834,7 @@ body, html {
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: -10;
+  z-index: 0;
   pointer-events: none;
 }
 
