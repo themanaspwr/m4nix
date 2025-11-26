@@ -49,7 +49,6 @@ document.querySelectorAll(".modal-trigger").forEach(card => {
   card.addEventListener("click", () => {
     modal.classList.add("show");
 
-    // Fake preview UI
     modalPreview.innerHTML = `
       <div class="fake-preview">
         <div class="preview-bar"></div>
@@ -63,4 +62,3 @@ document.querySelectorAll(".modal-trigger").forEach(card => {
 
 modalClose.onclick = () => modal.classList.remove("show");
 modal.onclick = (e) => { if (e.target === modal) modal.classList.remove("show"); };
-
